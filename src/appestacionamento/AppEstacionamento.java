@@ -4,6 +4,8 @@
  */
 package appestacionamento;
 
+import interfaces.TelaMenu;
+
 /**
  *
  * @author beatriz.lreis
@@ -14,7 +16,8 @@ public class AppEstacionamento {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        TelaMenu tm = new TelaMenu();
+        tm.setVisible(true);
     }
     
 }
