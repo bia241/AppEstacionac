@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import interfaces.TelaLogin;
+
 /**
  *
  * @author beatriz.lreis
@@ -26,22 +28,28 @@ public class TelaMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mLogin = new javax.swing.JMenuItem();
+        mEmissao = new javax.swing.JMenuItem();
+        mPreços = new javax.swing.JMenuItem();
+        mPagamento = new javax.swing.JMenuItem();
+        mControle = new javax.swing.JMenuItem();
+        mAjuda1 = new javax.swing.JMenu();
+        mAjuda = new javax.swing.JMenu();
+        mDesenvolvedor = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 2, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel1.setText("E S T A C I O N A C");
+        jLabel1.setText("P A R K  U p");
 
         jToggleButton1.setBackground(new java.awt.Color(255, 153, 0));
         jToggleButton1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -59,40 +67,86 @@ public class TelaMenu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
+                        .addGap(175, 175, 175)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(277, 277, 277)
+                        .addGap(239, 239, 239)
                         .addComponent(jToggleButton1)))
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(122, 122, 122)
+                .addGap(100, 100, 100)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jToggleButton1)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jMenu1.setText("OPÇÕES");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("TESTE");
-
-        jMenuItem1.setText("PRECOS");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        mLogin.setText("Login");
+        mLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                mLoginActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem1);
+        jMenu1.add(mLogin);
 
-        jMenuBar1.add(jMenu3);
+        mEmissao.setText("Emissão de Tickets");
+        mEmissao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mEmissaoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mEmissao);
+
+        mPreços.setText("Cálculo de Valor");
+        mPreços.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mPreçosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mPreços);
+
+        mPagamento.setText("Forma de Pagamento");
+        mPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mPagamentoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mPagamento);
+
+        mControle.setText("Controle de Pátio");
+        mControle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mControleActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mControle);
+
+        jMenuBar1.add(jMenu1);
+
+        mAjuda1.setText("AJUDA");
+        mAjuda1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mAjuda1ActionPerformed(evt);
+            }
+        });
+
+        mAjuda.setText("AJUDA");
+        mAjuda1.add(mAjuda);
+
+        jMenuBar1.add(mAjuda1);
+
+        mDesenvolvedor.setText("jMenu2");
+        mDesenvolvedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mDesenvolvedorActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(mDesenvolvedor);
 
         setJMenuBar(jMenuBar1);
 
@@ -108,19 +162,54 @@ public class TelaMenu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        TelaPreços tp = new TelaPreços();
-        tp.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
+    private void mAjudaActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        TelaAjuda ta = new TelaAjuda();
+        ta.setVisible(true);
+    }   
+    
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
         TelaLogin tl = new TelaLogin();
         tl.setVisible(true);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void mLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mLoginActionPerformed
+        TelaLogin tl = new TelaLogin();
+        tl.setVisible(true);
+    }//GEN-LAST:event_mLoginActionPerformed
+
+    private void mEmissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mEmissaoActionPerformed
+        TelaEmissaoTicket te = new TelaEmissaoTicket();
+        te.setVisible(true);
+    }//GEN-LAST:event_mEmissaoActionPerformed
+
+    private void mPreçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mPreçosActionPerformed
+        TelaPreços tp = new TelaPreços();
+        tp.setVisible(true);
+    }//GEN-LAST:event_mPreçosActionPerformed
+
+    private void mPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mPagamentoActionPerformed
+        TelaPagamento tpa = new TelaPagamento();
+        tpa.setVisible(true);
+    }//GEN-LAST:event_mPagamentoActionPerformed
+
+    private void mControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mControleActionPerformed
+        TelaControlePatio tc = new TelaControlePatio();
+        tc.setVisible(true);
+    }//GEN-LAST:event_mControleActionPerformed
+
+    private void mAjuda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAjuda1ActionPerformed
+       TelaAjuda taj = new TelaAjuda();
+       taj.setVisible(true);
+    }//GEN-LAST:event_mAjuda1ActionPerformed
+
+    private void mDesenvolvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDesenvolvedorActionPerformed
+       TelaAjuda taj = new TelaAjuda();
+       taj.setVisible(true);
+    }//GEN-LAST:event_mDesenvolvedorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,11 +250,17 @@ public class TelaMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JMenu mAjuda;
+    private javax.swing.JMenu mAjuda1;
+    private javax.swing.JMenuItem mControle;
+    private javax.swing.JMenu mDesenvolvedor;
+    private javax.swing.JMenuItem mEmissao;
+    private javax.swing.JMenuItem mLogin;
+    private javax.swing.JMenuItem mPagamento;
+    private javax.swing.JMenuItem mPreços;
     // End of variables declaration//GEN-END:variables
 }
