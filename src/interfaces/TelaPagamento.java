@@ -29,6 +29,7 @@ public class TelaPagamento extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jProgressBar1 = new javax.swing.JProgressBar();
         jPanel1 = new javax.swing.JPanel();
         ckDebito = new javax.swing.JCheckBox();
         ckCredito = new javax.swing.JCheckBox();
@@ -36,11 +37,15 @@ public class TelaPagamento extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         ckPix = new javax.swing.JCheckBox();
         btConfirmar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        btVoltar = new javax.swing.JButton();
+        btProximo = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
+        ckDebito.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(ckDebito);
         ckDebito.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         ckDebito.setForeground(new java.awt.Color(255, 153, 0));
@@ -52,12 +57,14 @@ public class TelaPagamento extends javax.swing.JFrame {
             }
         });
 
+        ckCredito.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(ckCredito);
         ckCredito.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         ckCredito.setForeground(new java.awt.Color(255, 153, 0));
         ckCredito.setText("Crédito");
         ckCredito.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
 
+        ckDinheiro.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(ckDinheiro);
         ckDinheiro.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         ckDinheiro.setForeground(new java.awt.Color(255, 153, 0));
@@ -66,8 +73,9 @@ public class TelaPagamento extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel1.setText("ESCOLHA SUA FORMA DE PAGAMENTO:");
+        jLabel1.setText("ESCOLHA SUA FORMA DE");
 
+        ckPix.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(ckPix);
         ckPix.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         ckPix.setForeground(new java.awt.Color(255, 153, 0));
@@ -82,6 +90,30 @@ public class TelaPagamento extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel2.setText("PAGAMENTO:");
+
+        btVoltar.setBackground(new java.awt.Color(0, 0, 0));
+        btVoltar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btVoltar.setForeground(new java.awt.Color(255, 255, 255));
+        btVoltar.setText("Voltar");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
+
+        btProximo.setBackground(new java.awt.Color(0, 0, 0));
+        btProximo.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btProximo.setForeground(new java.awt.Color(255, 255, 255));
+        btProximo.setText("Próximo");
+        btProximo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btProximoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -89,29 +121,40 @@ public class TelaPagamento extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(110, 110, 110)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ckDebito)
-                                    .addComponent(ckDinheiro))
-                                .addGap(80, 80, 80)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ckPix)
-                                    .addComponent(ckCredito)))))
+                        .addGap(195, 195, 195)
+                        .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(275, 275, 275)
+                        .addGap(218, 218, 218)
                         .addComponent(btConfirmar)))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ckDebito)
+                            .addComponent(ckDinheiro))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ckPix)
+                            .addComponent(ckCredito))))
+                .addGap(0, 129, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(btVoltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btProximo)
+                .addGap(32, 32, 32))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ckDebito)
                     .addComponent(ckCredito))
@@ -119,9 +162,13 @@ public class TelaPagamento extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ckDinheiro)
                     .addComponent(ckPix))
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(btConfirmar)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btVoltar)
+                    .addComponent(btProximo))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,6 +183,7 @@ public class TelaPagamento extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ckDebitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckDebitoActionPerformed
@@ -160,6 +208,16 @@ public class TelaPagamento extends javax.swing.JFrame {
     private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmarActionPerformed
         pagamento();
     }//GEN-LAST:event_btConfirmarActionPerformed
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        TelaPreços tp = new TelaPreços();
+        tp.setVisible(true);
+    }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void btProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProximoActionPerformed
+        TelaControlePatio tpt = new TelaControlePatio();
+        tpt.setVisible(true);
+    }//GEN-LAST:event_btProximoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,12 +256,16 @@ public class TelaPagamento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btConfirmar;
+    private javax.swing.JButton btProximo;
+    private javax.swing.JButton btVoltar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox ckCredito;
     private javax.swing.JCheckBox ckDebito;
     private javax.swing.JCheckBox ckDinheiro;
     private javax.swing.JCheckBox ckPix;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
